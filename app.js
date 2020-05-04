@@ -39,7 +39,33 @@ function calculate_area() {
     }
 }
 
-//calculate_static_area();
-calculate_area();
+function calculate_cartons() {
 
-console.log(`Final result: ${input}`);
+    let found = false;
+    let input = 10;
+    let min_carton = 10;
+    let cartons = min_carton;
+    let sqft_increment = 20;
+    let min_sqft_increment = 200;
+    let result = 0;
+
+    let loop = input - min_carton;
+
+    result = min_sqft_increment;
+
+    for(let y=0; y<loop; y++) {
+
+        result = min_sqft_increment + sqft_increment * loop;
+        cartons++;
+    }
+    
+    console.log('Sqft: ' + result);
+    console.log('Cartoons: ' + cartons);
+
+}
+
+//calculate_static_area();
+//calculate_area();
+calculate_cartons();
+
+//console.log(`Final result: ${input}`);
